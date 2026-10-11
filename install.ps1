@@ -128,39 +128,15 @@ function Get-TerminalCols {
 
 function Print-Header {
     $Cols = Get-TerminalCols
-
-    if ($Cols -ge 65) {
-        $BannerWidth = 60
-        $Lines = @(
-            " __  __            _      ____              _____ _   _ ___ ",
-            "|  \/  | _____   _(_) ___| __ )  _____  __ |_   _| | | |_ _|",
-            "| |\/| |/ _ \ \ / / |/ _ \  _ \ / _ \ \/ /   | | | | | || | ",
-            "| |  | | (_) \ V /| |  __/ |_) | (_) >  <    | | | |_| || | ",
-            "|_|  |_|\___/ \_/ |_|\___|____/ \___/_/\_\   |_|  \___/|___|"
-        )
-    } elseif ($Cols -ge 36) {
-        $BannerWidth = 31
-        $Lines = @(
-            "█▀▄▀█ █▀█ █ █ █ █▀▀ █▀▄ █▀█ ▀▄▀",
-            "█ ▀ █ █▄█ ▀▄▀ █ ██▄ █▄▀ █▄█ █ █"
-        )
-    } else {
-        $BannerWidth = 12
-        $Lines = @(
-            "Decan Movie"
-        )
-    }
-
-    $BannerPad = [Math]::Max(0, [int][Math]::Floor(($Cols - $BannerWidth) / 2))
+    $Banner = "Decan Movie"
+    $BannerPad = [Math]::Max(0, [int][Math]::Floor(($Cols - $Banner.Length) / 2))
     $Sub = "Official Installer"
     $SubPad = [Math]::Max(0, [int][Math]::Floor(($Cols - $Sub.Length) / 2))
 
-    foreach ($Line in $Lines) {
-        if ($BannerPad -gt 0) {
-            Write-Host ((" " * $BannerPad) + $Line) -ForegroundColor Magenta
-        } else {
-            Write-Host $Line -ForegroundColor Magenta
-        }
+    if ($BannerPad -gt 0) {
+        Write-Host ((" " * $BannerPad) + $Banner) -ForegroundColor Magenta
+    } else {
+        Write-Host $Banner -ForegroundColor Magenta
     }
 
     if ($SubPad -gt 0) {
