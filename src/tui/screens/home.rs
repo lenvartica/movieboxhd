@@ -1378,7 +1378,7 @@ pub fn draw(frame: &mut Frame, area: Rect, state: &mut AppState, theme: &Theme) 
         || (view == SearchViewState::Editing && state.search_results.is_empty())
     {
         let basic_terminal = state.basic_terminal;
-        let (tier, rows) = landing_split(
+        let (_, rows) = landing_split(
             area,
             state.is_tv_mode,
             basic_terminal,
