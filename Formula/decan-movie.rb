@@ -1,8 +1,8 @@
 class DecanMovie < Formula
-  VERSION = "0.1.26"
-  MACOS_SHA256 = "e35297d7a83b36cd14dd7e8ca493acd230f24d0dc56d2fdded79b90130c4beb3"
-  LINUX_X64_SHA256 = "03dad5d2fc00aa52c6efd7470b649771a5dadecbbcafac622de21bc3964fbcf8"
-  LINUX_ARM64_SHA256 = "3e56be589396f490ef0228dde08e1571ac3e6cb937b91ecf4c6aa837e917d711"
+  VERSION = "0.1.27"
+  MACOS_SHA256 = "f15339a95b47bb08d6ae454c2e707df4b0d13801a7b9c3f0fb81a003d1108f54"
+  LINUX_X64_SHA256 = "cd852435fd62cd92f025d0831427959d253aa38515e4e4c6e7bf987d05ea797b"
+  LINUX_ARM64_SHA256 = "a72d06d59b7170d6cfc4ca3d8329363022afa08e0ad0064826470efe2e076b54"
 
   desc "Find and play movies, shows, anime, and live TV from your terminal"
   homepage "https://github.com/lenvartica/movieboxhd"

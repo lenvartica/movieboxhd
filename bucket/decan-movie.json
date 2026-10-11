@@ -1,5 +1,5 @@
 {
-  "version": "0.1.26",
+  "version": "0.1.27",
   "description": "Terminal app to find, download, and stream movies, TV shows, and live TV",
   "homepage": "https://github.com/lenvartica/movieboxhd",
   "license": "MIT|Apache-2.0",
@@ -8,12 +8,12 @@
   },
   "architecture": {
     "64bit": {
-      "url": "https://github.com/lenvartica/movieboxhd/releases/download/v0.1.26/DecanMovie_Windows_x64.zip",
-      "hash": "1611dea5c04006f921fdfb55bc3d63cc3d95d093ed28a3b88569356227134770"
+      "url": "https://github.com/lenvartica/movieboxhd/releases/download/v0.1.27/DecanMovie_Windows_x64.zip",
+      "hash": "8251de6c25389408c869d2d29df7352208caf8d664c60c03d13bbfc867f400f8"
     },
     "arm64": {
-      "url": "https://github.com/lenvartica/movieboxhd/releases/download/v0.1.26/DecanMovie_Windows_arm64.zip",
-      "hash": "130da78a6febdd8211ed2e05eea6f412dc0bcec0e7bb59441da8c67ed082a74f"
+      "url": "https://github.com/lenvartica/movieboxhd/releases/download/v0.1.27/DecanMovie_Windows_arm64.zip",
+      "hash": "0841e447c70f4487f9fd775c1d03ffd9511af0be155d2ab7206e2529e4280b24"
     }
   },
   "bin": "decan-movie.exe",
