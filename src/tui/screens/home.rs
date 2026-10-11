@@ -915,6 +915,40 @@ pub(crate) fn dynamic_search_placeholder(state: &AppState) -> &'static str {
     }
 }
 
+fn decan_movie_wordmark(tv_mode: bool) -> String {
+    const GLYPHS: [[&str; 5]; 10] = [
+        ["████ ", "█   █", "█   █", "█   █", "████ "],
+        ["█████", "█    ", "████ ", "█    ", "█████"],
+        [" ████", "█    ", "█    ", "█    ", " ████"],
+        [" ███ ", "█   █", "█████", "█   █", "█   █"],
+        ["█   █", "██  █", "█ █ █", "█  ██", "█   █"],
+        ["█   █", "██ ██", "█ █ █", "█   █", "█   █"],
+        [" ███ ", "█   █", "█   █", "█   █", " ███ "],
+        ["█   █", "█   █", "█   █", " █ █ ", "  █  "],
+        ["█████", "  █  ", "  █  ", "  █  ", "█████"],
+        ["█████", "█    ", "████ ", "█    ", "█████"],
+    ];
+
+    (0..5)
+        .map(|row| {
+            let mut line = String::new();
+            for (index, glyph) in GLYPHS.iter().enumerate() {
+                if index == 5 {
+                    line.push_str("   ");
+                } else if index > 0 {
+                    line.push(' ');
+                }
+                line.push_str(glyph[row]);
+            }
+            if tv_mode && row == 4 {
+                line.push_str("  TV");
+            }
+            line
+        })
+        .collect::<Vec<_>>()
+        .join("\n")
+}
+
 #[cfg(test)]
 fn search_content(state: &AppState, view: SearchViewState, width: u16) -> String {
     let prefix = if state.basic_terminal { "> " } else { "❯ " };
@@ -1386,7 +1420,16 @@ pub fn draw(frame: &mut Frame, area: Rect, state: &mut AppState, theme: &Theme) 
         );
         let vertical_chunks = &rows.rects;
 
-        let logo_text = "DECAN MOVIE";
+        let compact_logo = basic_terminal || rows.logo_width < 60;
+        let logo_text = if compact_logo {
+            if state.is_tv_mode {
+                "DECAN MOVIE TV".to_string()
+            } else {
+                "DECAN MOVIE".to_string()
+            }
+        } else {
+            decan_movie_wordmark(state.is_tv_mode)
+        };
 
         let logo_width: u16 = rows.logo_width;
 
@@ -1419,7 +1462,7 @@ pub fn draw(frame: &mut Frame, area: Rect, state: &mut AppState, theme: &Theme) 
             theme.title
         };
         let title_art = Paragraph::new(logo_text)
-            .alignment(Alignment::Left)
+            .alignment(Alignment::Center)
             .style(logo_style);
         frame.render_widget(title_art, horizontal_chunks[1]);
 
@@ -3953,7 +3996,7 @@ mod tests {
             .collect::<String>();
 
         assert!(content.contains(&format!("v{}", env!("CARGO_PKG_VERSION"))));
-        assert!(content.contains("DECAN MOVIE"));
+        assert!(content.contains("████  █████"));
         assert!(!content.contains("MOVIEBOX"));
     }
 

@@ -419,6 +419,48 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4583a4551df46e2792f82ceeac45e850d2e2d5debba0b91f102385cda5b11f06"
 
 [[package]]
+name = "decan-movie"
+version = "0.1.27"
+dependencies = [
+ "base64 0.23.1",
+ "crossterm",
+ "dirs",
+ "flate2",
+ "flexi_logger",
+ "futures",
+ "hickory-resolver",
+ "hmac",
+ "image",
+ "libc",
+ "log",
+ "lru",
+ "md-5",
+ "mimalloc",
+ "open",
+ "percent-encoding",
+ "rand 0.10.3",
+ "ratatui",
+ "ratatui-crossterm",
+ "ratatui-image",
+ "reqwest",
+ "rmp-serde",
+ "rustls",
+ "scraper",
+ "semver",
+ "serde",
+ "serde_json",
+ "sha2",
+ "tar",
+ "tempfile",
+ "thiserror 2.0.21",
+ "tokio",
+ "unicode-segmentation",
+ "unicode-width",
+ "url",
+ "zip",
+]
+
+[[package]]
 name = "deranged"
 version = "0.5.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1418,48 +1460,6 @@ dependencies = [
  "smallvec",
  "tagptr",
  "uuid",
-]
-
-[[package]]
-name = "decan-movie"
-version = "0.1.26"
-dependencies = [
- "base64 0.23.1",
- "crossterm",
- "dirs",
- "flate2",
- "flexi_logger",
- "futures",
- "hickory-resolver",
- "hmac",
- "image",
- "libc",
- "log",
- "lru",
- "md-5",
- "mimalloc",
- "open",
- "percent-encoding",
- "rand 0.10.3",
- "ratatui",
- "ratatui-crossterm",
- "ratatui-image",
- "reqwest",
- "rmp-serde",
- "rustls",
- "scraper",
- "semver",
- "serde",
- "serde_json",
- "sha2",
- "tar",
- "tempfile",
- "thiserror 2.0.21",
- "tokio",
- "unicode-segmentation",
- "unicode-width",
- "url",
- "zip",
 ]
 
 [[package]]
