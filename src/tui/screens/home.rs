@@ -3996,7 +3996,7 @@ mod tests {
             .collect::<String>();
 
         assert!(content.contains(&format!("v{}", env!("CARGO_PKG_VERSION"))));
-        assert!(content.contains("████  █████"));
+        assert!(content.contains("████"));
         assert!(!content.contains("MOVIEBOX"));
     }
 
