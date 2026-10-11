@@ -28,9 +28,21 @@ Decan Movie is a rebranded continuation of [MovieBox-TUI](https://github.com/mes
 - `mpv`, `VLC`, or `IINA` for playback.
 - `yt-dlp` and `ffmpeg` only for MovieBox DASH downloads.
 
-## Install and Build
+## Install
 
-Clone this repository and build the executable:
+### Windows
+
+Run this in PowerShell to install the latest release:
+
+```powershell
+irm https://raw.githubusercontent.com/lenvartica/movieboxhd/main/install.ps1 | iex
+```
+
+The installer places `decan-movie.exe` in your user programs folder and adds it to your user `PATH`; no administrator access is needed. Open a new terminal if the `decan-movie` command is not recognized immediately. To review the script before running it, download it first with `irm https://raw.githubusercontent.com/lenvartica/movieboxhd/main/install.ps1 -OutFile install.ps1`, then inspect and run `.\install.ps1`.
+
+### Build from source
+
+Install Rust 1.90 or newer, then clone this repository and build the executable:
 
 ```bash
 git clone https://github.com/lenvartica/movieboxhd.git
@@ -38,13 +50,7 @@ cd movieboxhd
 cargo build --release --locked
 ```
 
-The executable is created at `target/release/decan-movie` (`target\release\decan-movie.exe` on Windows). To install it into Cargo's binary directory:
-
-```bash
-cargo install --path . --locked
-```
-
-Run `decan-movie` to start. Prebuilt installers will be added to the [GitHub Releases](https://github.com/lenvartica/movieboxhd/releases) when published.
+The executable is created at `target/release/decan-movie` (`target\release\decan-movie.exe` on Windows). To install it into Cargo's binary directory, run `cargo install --path . --locked`. Prebuilt downloads for Windows, Linux, macOS, and Android are available from [GitHub Releases](https://github.com/lenvartica/movieboxhd/releases).
 
 ## Quick Start
 
