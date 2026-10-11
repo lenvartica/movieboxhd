@@ -9,11 +9,11 @@
   "architecture": {
     "64bit": {
       "url": "https://github.com/lenvartica/movieboxhd/releases/download/v0.1.26/DecanMovie_Windows_x64.zip",
-      "hash": "af44f1d45e39c23ffd78ef65ef5b2db9b581fe897940ae91fff140a256de5b96"
+      "hash": "1611dea5c04006f921fdfb55bc3d63cc3d95d093ed28a3b88569356227134770"
     },
     "arm64": {
       "url": "https://github.com/lenvartica/movieboxhd/releases/download/v0.1.26/DecanMovie_Windows_arm64.zip",
-      "hash": "0580aeaad5649a1e89e6d3bf2ba976ea40b5bdc63a803d6ecfd6cf2f238509d5"
+      "hash": "130da78a6febdd8211ed2e05eea6f412dc0bcec0e7bb59441da8c67ed082a74f"
     }
   },
   "bin": "decan-movie.exe",
